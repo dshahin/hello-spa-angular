@@ -5,11 +5,12 @@
 
     beforeEach(module('helloSpaNg'));
 
-    it('should define more than 5 awesome things', inject(function($controller) {
+    it('should define more than 2 users', inject(function($controller) {
+      
       var vm = $controller('MainController');
 
-      expect(angular.isArray(vm.awesomeThings)).toBeTruthy();
-      expect(vm.awesomeThings.length > 5).toBeTruthy();
+      expect(angular.isArray(vm.users)).toBeTruthy();
+      expect(vm.users.length > 2).toBeTruthy();
     }));
   });
 })();

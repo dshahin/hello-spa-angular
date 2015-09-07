@@ -17,7 +17,7 @@
       });
 
     $urlRouterProvider.otherwise('/');
-    jsrMocksProvider.setMocks($SPA.mocks);
+    jsrMocksProvider.setMocks(window.$SPA.mocks);
     //performance booster
     $compileProvider.debugInfoEnabled(false);
 
