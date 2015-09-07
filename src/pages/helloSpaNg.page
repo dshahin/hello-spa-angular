@@ -1,0 +1,37 @@
+<apex:page showHeader="false" sidebar="false" standardStylesheets="false" cache="false" expires="0" >
+<html class="no-js">
+
+<head>
+    <meta charset="utf-8"/>
+    <!-- <title>spa</title> -->
+    <meta name="description" content=""/>
+    <meta name="viewport" content="width=device-width"/>
+    <apex:stylesheet value="{!URLFOR($Resource.helloSpaNg, '/styles/vendor.css')}"/>
+    <apex:stylesheet value="{!URLFOR($Resource.helloSpaNg, '/styles/app.css')}"/>
+
+    <!-- <apex:includeScript value="{!URLFOR($Resource.helloSpaNg, '/scripts/modernizr.js')}"/> -->
+
+    <script type="text/javascript">
+    if(document.URL.indexOf("force") > 0) {
+        staticURL = '{!$Resource.helloSpaNg}';
+    }else{
+        staticURL= '';    
+    }
+    $SPA = {
+        staticPath: staticURL,
+        config: {},
+        remoteActions: {}
+    };
+    </script>
+</head>
+
+<body>
+	<div ng-app="helloSpaNg">
+    	<ui-view></ui-view>
+    </div>	
+    <apex:includeScript value="{!URLFOR($Resource.helloSpaNg, '/scripts/vendor.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.helloSpaNg, '/scripts/app.js')}"/>
+</body>
+
+</html>	
+</apex:page>
