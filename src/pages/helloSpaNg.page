@@ -1,4 +1,4 @@
-<apex:page showHeader="false" sidebar="false" standardStylesheets="false" cache="false" expires="0" >
+<apex:page showHeader="false" sidebar="false" standardStylesheets="false" cache="false" expires="0" controller="HelloSPA">
 <html class="no-js">
 
 <head>
@@ -20,7 +20,17 @@
     $SPA = {
         staticPath: staticURL,
         config: {},
-        remoteActions: {}
+        jsr: {getUsers: '{!$RemoteAction.HelloSPA.getUsers}'},
+        mocks: {
+            '{!$RemoteAction.HelloSPA.getUsers}' :{
+                timeout: 1000,
+                method: function(){
+                    return [
+                       { Name : 'dan shahin'}
+                    ];
+                }
+            }
+        }
     };
     </script>
 </head>

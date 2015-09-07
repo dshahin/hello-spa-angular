@@ -15,7 +15,31 @@
     $SPA = {
         staticPath: staticURL,
         config: {},
-        remoteActions: {}
+        jsr: {getUsers: '{!$RemoteAction.HelloSPA.getUsers}'},
+        mocks: {
+            '{!$RemoteAction.HelloSPA.getUsers}' :{
+                timeout: 500,
+                method: function(){
+                    return [
+                        { 
+                            Name : 'Dan Shahin',
+                            Id : "00550000001ainHAAQ",
+                            FullPhotoUrl : "https://c.na3.content.force.com/profilephoto/729500000004sNN/F"
+                        },
+                        { 
+                            Name : 'James Bond',
+                            Id : "00550000001ainHAAQ",
+                            FullPhotoUrl : "https://c.na3.content.force.com/profilephoto/729500000004sNX/F"
+                        },
+                        { 
+                            Name : 'Sales Agent',
+                            Id : "00550000001ainHAAQ",
+                            FullPhotoUrl : "https://c.na3.content.force.com/profilephoto/729500000004sNS/F"
+                        }
+                    ];
+                }
+            }
+        }
     };
     </script>
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->

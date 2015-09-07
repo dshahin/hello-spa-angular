@@ -6,7 +6,7 @@
     .controller('MainController', MainController);
 
   /** @ngInject */
-  function MainController($timeout, webDevTec, toastr, $log, $window) {
+  function MainController($timeout, webDevTec, toastr, $log, $window, jsr) {
     var vm = this;
 
     var $SPA = $window.$SPA;
@@ -15,6 +15,7 @@
     vm.classAnimation = '';
     vm.creationDate = 1441588902321;
     vm.showToastr = showToastr;
+    vm.users = [];
 
     toastr.success('Hello SpaNG!');
     $log.debug('hello spang');
@@ -28,6 +29,17 @@
       $timeout(function() {
         vm.classAnimation = 'rubberBand';
       }, 4000);
+
+      getUsers();
+    }
+
+    function getUsers(){
+      jsr({
+        method: $SPA.jsr.getUsers
+      }).then(function(users){
+        $log.log(users);
+        vm.users = users;
+      });
     }
 
     function showToastr() {
