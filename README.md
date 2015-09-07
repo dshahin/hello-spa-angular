@@ -12,6 +12,6 @@ This app has no external dependencies and is great for:
 
 1. Click the Deploy Button
 2. Login with admin rights to your Salesforce org
-3. Navigate in to your org /Apex/HelloSPA
-4. Edit the HelloSPA.page and the contents of HelloSPA.resource
+3. Navigate in to your org /Apex/helloSpaNg
+4. Edit the helloSpaNg.page and the contents of helloSpaNg.resource
 5. Start soaking in the SPA
