@@ -19,6 +19,16 @@
     "jsr-mocks": "angular",
     "font-awesome": "~4.4.0"
   },
+  "overrides" : {
+    "bootstrap-sass-official" :{
+      "main" : [
+        "assets/stylesheets/_bootstrap.scss",
+        "assets/javascripts/bootstrap.js",
+        "assets/fonts/bootstrap/*.*"
+
+      ]
+    }
+  },
   "devDependencies": {
     "angular-mocks": "~1.4.0"
   },
